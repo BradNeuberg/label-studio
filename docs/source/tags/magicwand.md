@@ -29,7 +29,7 @@ The Magic Wand requires pixel-level access to images that are being labelled in 
 
 The `Magicwand` tag is configured to work with an `Image` tag that it will operate on for labeling. If you are storing an image cross-domain that the `Image` tag will reference, you will have to correctly setup the `crossOrigin` on the `Image` attribute. This attribute [mimics the same `crossOrigin` attribute that a normal DOM `img` tag would have](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin).
 
-If the image is on a public server or Google/AWS/Azure bucket that is publically readable without any authentication, you should set `crossOrigin` to `anonymous`.
+If the image is on a public server or Google/AWS/Azure bucket that is publicly readable without any authentication, you should set `crossOrigin` to `anonymous`.
 
 If the image is on a server or a private cloud bucket that requires authentication of any kind (i.e. the request must have HTTP headers that prove authentication set along with the third party request), then you should set `crossOrigin` to `use-credentials`. Note that Google's cloud buckets [do not support authenticated requests for CORS requests](https://cloud.google.com/storage/docs/cross-origin#additional_considerations), which means you either need to make that Google bucket world readable to work with the Magic Wand, or use Label Studio's signed URL support ([AWS](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI), [GCP](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI-1), and [Azure](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI-2)).
 
